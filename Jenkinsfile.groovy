@@ -7,7 +7,7 @@ node {
         git "https://github.com/tilenbaeva/flask-examples.git"
     }
     stage("Copy files"){
-        sh "scp * ec2-user@${IP}:/tmp/"
+        sh "scp -r * ec2-user@${IP}:/tmp/"
     }
     stage("Install requirements"){
         sh "sudo ec2-user@${IP}     sudo  pip install -r /tmp/requirements.txt"
